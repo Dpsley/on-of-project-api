@@ -1,0 +1,1 @@
+{"request":{"action":"addPlanWithMounth","date":"30.11.2022","plans":[{"departament_id":"5","price":"2600000"},{"departament_id":"6","price":"3560000"},{"departament_id":"7","price":"560000"}],"email":"kirillchernakov86@gmail.com","token":"dad6fa2a8fe152b5360b4616951b1e37"},"result":{"rest_only":"1","install":""}}

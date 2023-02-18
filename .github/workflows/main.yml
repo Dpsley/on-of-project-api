@@ -1,0 +1,21 @@
+name: DEPLOY
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: pull update from master
+      uses: appleboy/ssh-action@v0.0.6
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        command_timeout: 200m
+        script: |
+          cd api.traffic-meter.ru/public_html/
+          git pull

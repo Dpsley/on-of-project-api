@@ -1,0 +1,21 @@
+name: DEV
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  dev_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: pull update from dev
+      uses: appleboy/ssh-action@v0.0.6
+      with:
+        host: ${{ secrets.DEVHOST }}
+        username: ${{ secrets.DEVUSERNAME }}
+        password: ${{ secrets.DEVPASSWORD }}
+        command_timeout: 200m
+        script: |
+          cd api.tm-dev-test.ru/public_html/
+          git pull
